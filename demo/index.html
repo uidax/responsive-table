@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>mobile friendly repsonsive table</title>
+    <meta charset="UTF-8" />
+    <style>
+      table {
+        table-layout: fixed;
+        width: 100%;
+        border-collapse: collapse;
+      }
+      td {
+        border: 1px solid #ccc;
+        padding: 3px;
+      }
+      thead {
+        font-weight: 900;
+      }
+      tbody tr:nth-of-type(2n + 1) {
+        background-color: #dedede;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>mobile friendly responsive table</h1>
+    <table class="leo-test-table">
+      <thead>
+        <tr>
+          <td>first name</td>
+          <td>last name</td>
+          <td>actions</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Leo</td>
+          <td>Chow</td>
+          <td>
+            <button>edit</button>
+            <button>delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+          <td>
+            <button>edit</button>
+            <button>delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Jane</td>
+          <td>Doe</td>
+          <td>
+            <button>edit</button>
+            <button>delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/@uidax/responsive-table"></script>
+    <script>
+      new ResponsiveTable({
+        tableClassName: ".leo-test-table",
+        hiddenLabels: [2],
+        breakPoint: "480"
+      });
+    </script>
+  </body>
+</html>

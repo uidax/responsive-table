@@ -1,0 +1,40 @@
+{
+  "name": "@uidax/responsive-table",
+  "version": "1.0.11",
+  "description": "An minimal mobile friendly responsive table",
+  "main": "dist/responsive-table.min.js",
+  "typings": "src/index.ts",
+  "files": [
+    "src",
+    "dist/*.js"
+  ],
+  "scripts": {
+    "clean": "rm dist",
+    "dev": "webpack -d --mode development --watch",
+    "build": "webpack -p --mode production"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uidax/responsive-table.git"
+  },
+  "keywords": [
+    "responsive table",
+    "mobile table",
+    "mobile friendly table"
+  ],
+  "author": "Leo Chow(leo.chow.china@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uidax/responsive-table/issues"
+  },
+  "homepage": "https://github.com/uidax/responsive-table#readme",
+  "devDependencies": {
+    "ts-loader": "^8.0.2",
+    "typescript": "^3.9.7",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
