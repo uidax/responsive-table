@@ -1,5 +1,5 @@
 interface IOptions {
-  tableClassName?: string,
+  tableSelector?: string,
   breakPoint?: string,
   labelFontWeight?: string,
   labelSuffix?: string,
@@ -7,7 +7,7 @@ interface IOptions {
   hiddenLabels?: number[],
 }
 class ResponsiveTable {
-  private tableClassName: string
+  private tableSelector: string
   private breakPoint: String
   private labelFontWeight: string
   private labelSuffix: string
@@ -17,34 +17,34 @@ class ResponsiveTable {
   private columnCount: number
 
   constructor({
-    tableClassName = '.responsive-table',
+    tableSelector = '.responsive-table',
     breakPoint = '768',
     hiddenLabels = [],
     labelSuffix = ':',
     labelFontWeight = '900',
     labelAfterSpace = '12',
   } : IOptions) {
-    this.tableClassName = tableClassName
+    this.tableSelector = tableSelector
     this.breakPoint = breakPoint
     this.hiddenLabels = hiddenLabels
     this.labelSuffix = labelSuffix
     this.labelFontWeight = labelFontWeight
     this.labelAfterSpace = labelAfterSpace
-    this.columns = document.querySelectorAll(`${this.tableClassName} thead td`)
+    this.columns = document.querySelectorAll(`${this.tableSelector} thead td`)
     this.columnCount = this.columns.length
     this.appendStyleToHead()
   }
 
   private get css() {
     const commonCss: string = `
-      ${this.tableClassName} thead {
+      ${this.tableSelector} thead {
         display: none;
       }
-      ${this.tableClassName} tbody td {
+      ${this.tableSelector} tbody td {
         display: block;
         border: 0;
       }
-      ${this.tableClassName} tbody td:before {
+      ${this.tableSelector} tbody td:before {
         padding-right: ${this.labelAfterSpace}px;
         font-weight: ${this.labelFontWeight};
       }
@@ -53,7 +53,7 @@ class ResponsiveTable {
     for(let i = 0; i < this.columnCount; i++) {
       if (this.hiddenLabels.indexOf(i) > -1) continue
       cssLabels.push(`
-        ${this.tableClassName} tbody td:nth-of-type(${i + 1}):before {
+        ${this.tableSelector} tbody td:nth-of-type(${i + 1}):before {
           content: "${this.columns[i].innerText}${this.labelSuffix}"
         }
       `)

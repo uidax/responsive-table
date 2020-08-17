@@ -93,8 +93,8 @@ All the options of ResponsiveTable constructor are optional with default value:
 
 ```javascript
 new ResponsiveTable({
-  // string, the table class name.
-  tableClassName: '.reponsive-table',
+  // string, the table selector.
+  tableSelector: '.responsive-table',
   // string, the max width for media query.
   breakPoint: '768',
   // string, the label font weight for mobile.
