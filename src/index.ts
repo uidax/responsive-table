@@ -30,7 +30,7 @@ class ResponsiveTable {
     this.labelSuffix = labelSuffix
     this.labelFontWeight = labelFontWeight
     this.labelAfterSpace = labelAfterSpace
-    this.columns = document.querySelectorAll(`${this.tableSelector} thead td`)
+    this.columns = document.querySelectorAll(`${this.tableSelector} thead th`)
     this.columnCount = this.columns.length
     this.appendStyleToHead()
   }

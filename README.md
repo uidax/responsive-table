@@ -9,9 +9,9 @@ Create your dom like this:
 <table class="repsonsive-table">
   <thead>
     <tr>
-      <td>first name</td>
-      <td>last name</td>
-      <td>actions</td>
+      <th>first name</th>
+      <th>last name</th>
+      <th>actions</th>
     </tr>
   </thead>
   <tbody>
