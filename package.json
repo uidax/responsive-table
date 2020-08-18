@@ -1,6 +1,6 @@
 {
   "name": "@uidax/responsive-table",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "An minimal mobile friendly responsive table",
   "main": "dist/responsive-table.min.js",
   "typings": "src/index.ts",
